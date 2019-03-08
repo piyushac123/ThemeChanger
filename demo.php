@@ -23,24 +23,7 @@
         </form>
         </center>
         <?php
-            //-------get input color
-            $color=' ';$Bcolor=' ';
-            if(isset($_POST['btn1'])){
-                $color="#66FCF1";
-                $Bcolor="#3500D3";
-            }
-            else if(isset($_POST['btn2'])){
-                $color="white";
-                $Bcolor="#659DBD";
-            }
-            else if(isset($_POST['btn3'])){
-                $color="#950740";
-                $Bcolor="#1A1A1D";
-            }
-            else if(isset($_POST['btn4'])){
-                $color="#AC3B61";
-                $Bcolor="#EDC7B7";
-            }
+            
             //$color=$_POST["text1"];
             $myfile1 = fopen("demo.css", "r") or die("Unable to open file!");
             //-------To get data of demo.css
@@ -62,6 +45,24 @@
             //echo $backPos." ".$semiColonPos2." ".$backDef;
             
             fclose($myfile1);
+	    //-------get input color
+            $color=$colorDef;$Bcolor=$backDef;
+            if(isset($_POST['btn1'])){
+                $color="#66FCF1";
+                $Bcolor="#3500D3";
+            }
+            else if(isset($_POST['btn2'])){
+                $color="white";
+                $Bcolor="#659DBD";
+            }
+            else if(isset($_POST['btn3'])){
+                $color="#950740";
+                $Bcolor="#1A1A1D";
+            }
+            else if(isset($_POST['btn4'])){
+                $color="#AC3B61";
+                $Bcolor="#EDC7B7";
+            }
             $myfile = fopen("demo.css", "w+") or die("Unable to open file!");
             
             /*echo $file_content;
